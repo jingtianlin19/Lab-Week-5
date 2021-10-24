@@ -3,5 +3,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // TODO
+  const select = Document.getElementById("horn-select")
+  select.addEventListener('select', ()=>{console.log(select)});
 }
