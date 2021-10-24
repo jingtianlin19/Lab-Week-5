@@ -4,5 +4,5 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   const select = Document.getElementById("horn-select")
-  select.addEventListener('select', ()=>{console.log(select)});
+  select.addEventListener('select', ()=>{console.log(select); console.log('in')});
 }
