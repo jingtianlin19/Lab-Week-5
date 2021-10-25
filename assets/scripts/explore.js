@@ -2,11 +2,12 @@
 
 window.addEventListener('DOMContentLoaded', init);
 var synth = window.speechSynthesis;
+var textToRead;
 function init() {
   const select = document.getElementById('voice-select');
   select.addEventListener('change', selectSound);
   const textIn = document.getElementById('text-to-speak');
-  textIn.addEventListener('change', txtIn);
+  textIn.addEventListener('change', (e)=>{textToRead = e.target.value});
 
 }
 function selectSound() {
