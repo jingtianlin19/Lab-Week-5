@@ -1,7 +1,7 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
-
+var isParty = false;
 function init() {
   const selectHorn = document.getElementById('horn-select');
   selectHorn.addEventListener('input', imgSelector)
@@ -26,6 +26,7 @@ function imgSelector(e) {
     case 'party-horn':
       image.setAttribute('src', 'assets/images/party-horn.svg');
       sound.setAttribute('src', 'assets/audio/party-horn.mp3');
+      isParty = true;
       break;
   }
 }
@@ -52,9 +53,8 @@ function soundSelector(e) {
   }
 }
 function clickSound() {
-  const sound = document.querySelector('.hidden');
-  sound.play();
-  if (sound.src == 'assets/audio/party-horn.mp3' && sound.volume !== 0) {
+  document.querySelector('.hidden').play();
+  if (isParty) {
     const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti();
   }
