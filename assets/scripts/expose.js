@@ -8,7 +8,7 @@ function init() {
   const selectSound = document.getElementById('volume');
   selectSound.addEventListener('change', soundSelector);
   const playSound = document.querySelector('button');
-  playSound.addEventListener('click', sound);
+  playSound.addEventListener('click', playsound);
 }
 function imgSelector(e) {
   var image = document.querySelector('img');
@@ -51,6 +51,8 @@ function soundSelector(e) {
     soundIcon.setAttribute('alt', 'Volume level 3');
   }
 }
-function playSound(e) {
-  console.log(e)
+function playsound() {
+  console.log('hi');
+  const sound = document.querySelector('audio');
+  sound.play();
 }
