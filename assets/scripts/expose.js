@@ -5,7 +5,9 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   const selectHorn = document.getElementsByName('horn');
   var image = document.querySelector('section img');
-  selectHorn.addEventListener('selectHorn', () => {
+  selectHorn.addEventListener('select', imgSelector(image))
+}
+function imgSelector(image) {
     console.log(this.value);
     switch(this.value) {
       default : return;
@@ -13,6 +15,4 @@ function init() {
       case 'car-horn' : image = '../images/car-horn.svg';
       case 'party-horn' : image = '../imagesparty-horn.svg';  
     }
-    return;
-  })
 }
