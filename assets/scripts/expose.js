@@ -7,8 +7,8 @@ function init() {
   selectHorn.addEventListener('input', imgSelector)
   const selectSound = document.getElementById('volume');
   selectSound.addEventListener('change', soundSelector);
-  const playSound = document.querySelector('button');
-  playSound.addEventListener('input', () => {document.querySelector('audio').play()});
+  const playSound = document.querySelector('section button');
+  playSound.addEventListener('input', clickSound);
 }
 function imgSelector(e) {
   var image = document.querySelector('img');
@@ -51,6 +51,6 @@ function soundSelector(e) {
     soundIcon.setAttribute('alt', 'Volume level 3');
   }
 }
-function playsound() {
-
+function clickSound() {
+  document.querySelector('.hidden').play();
 }
