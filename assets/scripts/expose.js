@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   const selectHorn = document.getElementsByName('horn');
-  const image = document.getElementsByTagName(img);
+  const image = document.querySelector('img');
   selectHorn.addEventListener('selectHorn', () => {
     console.log(this.value);
     switch(this.value) {
