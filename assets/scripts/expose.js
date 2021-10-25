@@ -55,6 +55,7 @@ function clickSound() {
   const sound = document.querySelector('.hidden');
   sound.play();
   if (sound.src == 'assets/audio/party-horn.mp3' && sound.volume !== 0) {
+    const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti();
   }
   
