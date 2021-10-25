@@ -31,11 +31,9 @@ function imgSelector(e) {
 }
 function soundSelector(e) {
   var soundIcon = document.querySelector('div img');
-  var audiobar = document.getElementById('volume');
   var audio = document.querySelector('audio')
   const vol = e.target.value;
   audio.setAttribute('volume', vol);
-  audiobar.setAttribute('value', vol);
   if (vol == 0) {
     soundIcon.setAttribute('src', 'assets/icons/volume-level-0.svg');
     soundIcon.setAttribute('alt', 'Volume level 0');
@@ -54,7 +52,6 @@ function soundSelector(e) {
   }
 }
 function playsound() {
-  console.log('hi');
   const sound = document.querySelector('audio');
   sound.play();
 }
