@@ -37,9 +37,9 @@ function readTxt() {
   icon.setAttribute('src', 'assets/images/smiling-open.png');
   var toSpeak = new SpeechSynthesisUtterance(textToRead);
   var voiceSelected = options.selectedOptions[0].getAttribute('data-name');
-  for (voice in voices) {
-    if (voice.name == voiceSelected) {
-      toSpeak.voice = voice;
+  for (var i = 0; i < voices.length; i++) {
+    if (voices[i].name == voiceSelected) {
+      toSpeak.voice = voices[i];
       break;
     }
   }
