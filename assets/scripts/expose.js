@@ -52,6 +52,5 @@ function soundSelector(e) {
   }
 }
 function clickSound() {
-  const sound = document.querySelector('.hidden')
-  sound.play();
+  document.querySelector('.hidden').play()
 }
