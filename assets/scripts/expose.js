@@ -41,16 +41,16 @@ function soundSelector(e) {
   else if (vol >= 1 && vol < 33) {
     soundIcon.setAttribute('src', 'assets/icons/volume-level-1.svg');
     soundIcon.setAttribute('alt', 'Volume level 1');
-    break;
   }
   else if (vol >= 33 && vol < 67) {
     soundIcon.setAttribute('src', 'assets/icons/volume-level-2.svg');
     soundIcon.setAttribute('alt', 'Volume level 2');
-    break;
   }
   else if (vol >= 67) {
     soundIcon.setAttribute('src', 'assets/icons/volume-level-3.svg');
     soundIcon.setAttribute('alt', 'Volume level 3');
-    break;
   }
+}
+function playSound(e) {
+  console.log(e)
 }
