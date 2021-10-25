@@ -33,7 +33,7 @@ function soundSelector(e) {
   var soundIcon = document.querySelector('div img');
   var audio = document.querySelector('audio')
   const vol = e.target.value;
-  audio.setAttribute('volume', vol);
+  audio.volume = vol;
   if (vol == 0) {
     soundIcon.setAttribute('src', 'assets/icons/volume-level-0.svg');
     soundIcon.setAttribute('alt', 'Volume level 0');
