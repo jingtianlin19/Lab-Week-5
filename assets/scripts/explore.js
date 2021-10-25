@@ -3,6 +3,8 @@
 window.addEventListener('DOMContentLoaded', init);
 var synth = window.speechSynthesis;
 var textToRead;
+var options = document.getElementById('voice-select');
+var voices;
 function init() {
   soundList();
   const textIn = document.getElementById('text-to-speak');
@@ -11,8 +13,7 @@ function init() {
   read.addEventListener('click', readTxt);
 }
 function soundList() {
-  const options = document.getElementById('voice-select')
-  const voices = synth.getVoices();
+  voices = synth.getVoices();
   for (voice in voices) {
     var option = document.createElement('option');
     option.textContent = voices.name + ' (' + voice.lang + ')';
@@ -28,10 +29,17 @@ function soundList() {
 
 function readTxt() {
   const icon = document.querySelector('img');
-  var speaking = synth.speaking;
   icon.setAttribute('src', 'assets/images/smiling-open.png');
-  synth.speak(textToRead);
-  if (speaking == 0) {
-    icon.setAttribute('src', 'assets/images/smiling.png');
+  var toSpeak = new SpeechSynthesisUtterance(textToRead);
+  var voiceSelected = options.selectedOptions[0].getAttribute('data-name');
+  for (voice in voices) {
+    if (voice.name == voiceSelected) {
+      toSpeak.voice = voice;
+      break;
+    }
+  }
+  synth.speak(toSpeak);
+  toSpeak.onend = function() {
+    icon.setAttribute('src', 'assets/images/smiling.png')
   }
 }
