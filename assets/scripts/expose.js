@@ -4,18 +4,24 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   var selectHorn = document.getElementsById('horn-select');
-  var image = document.querySelector('section img');
-  selectHorn.addEventListener('select', imgSelector(image))
-  var selectSound = document.getElementById('volume');
-  var soundIcon = document.querySelector('div img');
+  selectHorn.addEventListener('select', imgSelector())
+  // var selectSound = document.getElementById('volume');
+  // var soundIcon = document.querySelector('div img');
   // selectSound.addEventListener('input', soundSelector(this.value));
 }
-function imgSelector(image) {
-    switch(image) {
+function imgSelector(e) {
+    var image = document.querySelector('section img');
+    switch(e.target.value) {
       default : return;
-      case 'air-horn' : image = '../images/air-horn.svg';
-      case 'car-horn' : image = '../images/car-horn.svg';
-      case 'party-horn' : image = '../imagesparty-horn.svg';  
+      case 'air-horn' : 
+      image.setAttribute('src', 'assets/images/air-horn.svg'); 
+      break;
+      case 'car-horn' : 
+      image.setAttribute('src', 'assets/images/car-horn.svg'); 
+      break;
+      case 'party-horn' : 
+      image.setAttribute('src', 'assets/imagesparty-horn.svg');
+      break;   
     }
     return;
 }
