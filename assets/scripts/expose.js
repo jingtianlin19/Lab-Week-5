@@ -3,6 +3,15 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const select = Document.getElementById("horn-select")
-  select.addEventListener('select', ()=>{console.log(select); console.log('in')});
+  const selectHorn = document.getElementsByName('horn');
+  const image = document.getElementsByTagName(img);
+  selectHorn.addEventListener('selectHorn', () => {
+    console.log(this.value);
+    switch(this.value) {
+      default : return;
+      case 'air-horn' : image = 'air-horn.svg';
+      case 'car-horn' : image = 'car-horn.svg';
+      case 'party-horn' : image = 'party-horn.svg';
+    }
+  })
 }
