@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', init);
 var isParty = false;
+const jsConfetti = new JSConfetti();
 function init() {
   const selectHorn = document.getElementById('horn-select');
   selectHorn.addEventListener('input', imgSelector)
@@ -55,7 +56,6 @@ function soundSelector(e) {
 function clickSound() {
   document.querySelector('.hidden').play();
   if (isParty) {
-    const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti();
   }
   
