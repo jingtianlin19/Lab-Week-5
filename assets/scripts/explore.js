@@ -7,22 +7,27 @@ var options = document.getElementById('voice-select');
 var voices;
 function init() {
   soundList();
+  if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = soundList;
+  }
   const textIn = document.getElementById('text-to-speak');
   textIn.addEventListener('change', (e)=>{textToRead = e.target.value});
   const read = document.querySelector('button');
   read.addEventListener('click', readTxt);
 }
+
 function soundList() {
   voices = synth.getVoices();
-  for (voice in voices) {
+  for (var i = 0; i < voices.length; i++) {
     var option = document.createElement('option');
-    option.textContent = voices.name + ' (' + voice.lang + ')';
-    if(voice.default) {
+    option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+
+    if (voices[i].default) {
       option.textContent += ' -- DEFAULT';
     }
 
-    option.setAttribute('data-lang', voice.lang);
-    option.setAttribute('data-name', voice.name);
+    option.setAttribute('data-lang', voices[i].lang);
+    option.setAttribute('data-name', voices[i].name);
     options.appendChild(option);
   }
 }
