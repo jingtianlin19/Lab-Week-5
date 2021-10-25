@@ -4,19 +4,18 @@ window.addEventListener('DOMContentLoaded', init);
 var synth = window.speechSynthesis;
 var textToRead;
 function init() {
-  const select = document.getElementById('voice-select');
-  select.addEventListener('change', selectSound);
+  soundList();
   const textIn = document.getElementById('text-to-speak');
   textIn.addEventListener('change', (e)=>{textToRead = e.target.value});
   const read = document.querySelector('button');
   read.addEventListener('click', readTxt);
 }
-function selectSound() {
+function soundList() {
   const options = document.getElementById('voice-select')
   const voices = synth.getVoices();
   for (voice in voices) {
     var option = document.createElement('option');
-    option.textContent = voices[i].name + ' (' + voice.lang + ')';
+    option.textContent = voices.name + ' (' + voice.lang + ')';
     if(voice.default) {
       option.textContent += ' -- DEFAULT';
     }
