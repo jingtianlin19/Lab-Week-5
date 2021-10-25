@@ -52,5 +52,10 @@ function soundSelector(e) {
   }
 }
 function clickSound() {
-  document.querySelector('.hidden').play();
+  const sound = document.querySelector('.hidden');
+  sound.play();
+  if (sound.src == 'assets/audio/party-horn.mp3' && sound.volume !== 0) {
+    jsConfetti.addConfetti();
+  }
+  
 }
