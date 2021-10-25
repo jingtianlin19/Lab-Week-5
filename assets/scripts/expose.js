@@ -9,9 +9,9 @@ function init() {
     console.log(this.value);
     switch(this.value) {
       default : return;
-      case 'air-horn' : image = 'air-horn.svg';
-      case 'car-horn' : image = 'car-horn.svg';
-      case 'party-horn' : image = 'party-horn.svg';
+      case 'air-horn' : image = '../images/air-horn.svg';
+      case 'car-horn' : image = '../images/car-horn.svg';
+      case 'party-horn' : image = '../imagesparty-horn.svg';
     }
   })
 }
