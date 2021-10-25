@@ -8,7 +8,7 @@ function init() {
   const selectSound = document.getElementById('volume');
   selectSound.addEventListener('change', soundSelector);
   const playSound = document.querySelector('button');
-  playSound.addEventListener('change', playsound);
+  playSound.addEventListener('input', () => {document.querySelector('audio').play()});
 }
 function imgSelector(e) {
   var image = document.querySelector('img');
@@ -52,6 +52,5 @@ function soundSelector(e) {
   }
 }
 function playsound() {
-  // const sound = document.querySelector('audio');
-  sound.play();
+
 }
