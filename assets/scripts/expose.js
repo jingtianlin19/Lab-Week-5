@@ -19,10 +19,12 @@ function imgSelector(e) {
     case 'air-horn':
       image.setAttribute('src', 'assets/images/air-horn.svg');
       sound.setAttribute('src', 'assets/audio/air-horn.mp3');
+      isParty = false;
       break;
     case 'car-horn':
       image.setAttribute('src', 'assets/images/car-horn.svg');
       sound.setAttribute('src', 'assets/audio/car-horn.mp3');
+      isParty = false;
       break;
     case 'party-horn':
       image.setAttribute('src', 'assets/images/party-horn.svg');
